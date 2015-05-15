@@ -20,7 +20,7 @@ footer{
 .msgBlock{
 	position: absolute;
 	left: 410px;
-	right: 410px;
+	right: 10px;
 	top:70px;
 	bottom: 0px;
 }

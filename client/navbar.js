@@ -2,6 +2,7 @@
   Meteor.subscribe("user");
   Meteor.subscribe("getAllUsers");
   Meteor.subscribe("getAllMessages");
+  Meteor.subscribe("getAlerts")
   //navbar
   Template.navbar.helpers({
     g_user:function(){
@@ -35,8 +36,27 @@
     }
   });
 
+
+  
+
   //Execute when navbar renders
   Template.navbar.rendered=function(){
-
+    if(Notification && Alerts){
+      Alerts.find().observe({
+        added:function(newAlert){
+          if(Notification.permission!=="granted")
+            Notification.requestPermission();
+          var _sender=Meteor.users.findOne(newAlert.from).profile.name;
+          var notification = new Notification(_sender, {
+            icon: '/img/chat_icon.png',
+            body: newAlert.message
+          });
+          setTimeout(function(){
+            notification.close();
+          },1000);
+          Meteor.call("removeAlert",newAlert._id);
+        }
+      });
+    }
   };
 }());

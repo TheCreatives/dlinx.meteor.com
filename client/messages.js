@@ -29,8 +29,12 @@
       if($("#chatMsg").val()=="")return;
       if(window.event.which===13){
         var _targetUsr=Session.get("targetProfileID");
-        Meteor.call("sendMessage",_targetUsr,$("#chatMsg").val());
+        var _msg=$("#chatMsg").val();
+        Meteor.call("sendMessage",_targetUsr,_msg);
+        //Clear textbox.
+
         $("#chatMsg").val("");
+        //move scrollbar to message
         if(_msgContainer.scrollHeight > _msgContainer.clientHeight) {
           _msgContainer.scrollTop = _msgContainer.scrollHeight - _msgContainer.clientHeight;
         }

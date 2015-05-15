@@ -33,4 +33,11 @@
 		  	}
 		});
 	});
+
+	//Get my all alerts
+	Meteor.publish("getAlerts",function(){
+		return Alerts.find({
+			to:this.userId
+		})
+	});
 }());
