@@ -1,0 +1,58 @@
+<template name="navbar">
+  	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation </span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Dlinx Chat System</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group" style="position:relative;">
+	          <input type="text" class="form-control" id="txtNewMsg" placeholder="Search New Users">
+	          <ul class="dropdown-menu" role="menu" id="usersAutoComplete" style="min-width: 100%;">
+	          	{{#each userList}}
+		          	<li>
+		          		<a href="#" data-uid="{{this._id}}" class="searchUser">
+			          		<img src="{{this.services.google.picture}}" class="profilePic img-circle" />
+			          		<span>{{this.profile.name}} </span>
+			          		{{#if this.status.online}}
+			          			<span class="online-status online"></span>
+			          		{{else}}
+			          			{{#if this.status.idle}}
+			          				<span class="online-status idle"></span>
+			          			{{else}}
+			          				<span class="online-status offline"></span>
+			          			{{/if}}
+			          		{{/if}}
+		          		</a>
+		          	</li>
+	          	{{/each}}
+	          </ul>
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding:5px;">
+	          	<img src="{{g_user.services.google.picture}}" class="profilePic img-circle" />
+	          	 {{g_user.profile.name}}<span class="caret"></span>
+	          </a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="#">Profile </a></li>
+	            <li><a href="#">Settings</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#" id="btnlogout">Logout</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+</template>

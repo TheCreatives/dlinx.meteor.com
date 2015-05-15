@@ -1,0 +1,15 @@
+<template name="friendList">
+	<aside class="friendList">
+		<div class="well">
+			<input type="text" class="form-control" placeholder="Search Recent Chats" style="background-color:#FFF" />
+		</div>
+		<div class="list-group">
+			{{#each currentProfile.recent}}
+			  <a href="#" class="list-group-item">
+			  	<img src="{{this.picture}}" class="profilePic img-circle"/>
+			  	{{this.name}}
+			  </a>
+			 {{/each}}
+		</div>
+	</aside>
+</template>

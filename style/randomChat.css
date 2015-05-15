@@ -1,0 +1,92 @@
+footer{
+	position:fixed;
+	bottom:0px;
+	border:1px solid #F00;
+	width:100%;
+	left:0px;
+	padding:10px;
+}
+.msgBubble{
+	padding:2px;
+
+}
+.friendList{
+	box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+	width:400px;
+	top: 65px;
+	bottom:0px;
+	position:absolute;
+}
+.msgBlock{
+	position: absolute;
+	left: 410px;
+	right: 410px;
+	top:70px;
+	bottom: 0px;
+}
+.msgBlock>.panel{
+	position:absolute;
+	top:0px;
+	bottom: 50px;
+	width: 100%;
+	background-color: #f9f9f9;
+}
+.msgBlock>.panel>.panel-body{
+	position: relative;
+	height: 90%;
+	overflow-y:auto;
+}
+.msgBlock>.newMsg{
+	position: absolute;
+	bottom:0px;
+	width: 100%;
+	padding:15px;
+	background-color: #f9f9f9;
+}
+.msgBlock>.newMsg>.input{
+	background-color: #FFF;
+}
+.profilePic{
+	height: 40px;
+}
+.msgContainer{
+	position: absolute;
+	bottom: 20px;
+	width: 97%;
+}
+.message{
+	display: inline-block;
+	width: 60%;
+	float: left;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    margin-top:10px;
+    padding: 10px;
+}
+.msg .othersmsg{
+}
+.msg .mymsg{
+	float: right;
+	width: 60%;
+}
+.msg .msgTime{
+	display: block;
+	text-align: right;
+	font-size: 12px;
+	font-style: italic;
+}
+.online-status{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+}
+.online{
+	background-color: green;
+}
+.idle{
+	background-color: orange;
+}
+.offline{
+	background-color: gray;
+}

@@ -1,0 +1,21 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>randomChat</title>
+</head>
+
+<body>
+  <!-- asdsd:{{g_user._id}} -->
+  <!-- {{> messages}} -->
+	{{#if g_user}}
+		{{> navbar}}
+			{{>friendList}}
+			{{#if targetProfile}}
+				{{>messages}}
+			{{/if}}
+	{{else}}
+		{{> logintmp}}
+	{{/if}}
+</body>
