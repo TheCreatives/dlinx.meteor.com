@@ -38,6 +38,20 @@
 	Meteor.publish("getAlerts",function(){
 		return Alerts.find({
 			to:this.userId
-		})
+		});
+	});
+
+	//Get my profile
+	Meteor.publish("getMyProfile",function(){
+		return Profiles.find(this.userId);
+	});
+
+	//Get all profiles
+	Meteor.publish("getAllProfiles",function(){
+		return Profiles.find({},{
+			fields:{
+				'recent':0
+			}
+		});
 	});
 }());

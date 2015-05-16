@@ -11,7 +11,7 @@
         });
     },
     targetProfile:function(){
-      return Meteor.users.findOne(Session.get("targetProfileID"))
+      return Profiles.findOne(Session.get("targetProfileID"));
     }
   });
 

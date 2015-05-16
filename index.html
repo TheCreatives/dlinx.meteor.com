@@ -11,10 +11,10 @@
   <!-- {{> messages}} -->
 	{{#if g_user}}
 		{{> navbar}}
-			{{>friendList}}
-			{{#if targetProfile}}
-				{{>messages}}
-			{{/if}}
+		{{>friendList}}
+		{{#if targetProfile}}
+			{{>messages}}
+		{{/if}}
 	{{else}}
 		{{> logintmp}}
 	{{/if}}

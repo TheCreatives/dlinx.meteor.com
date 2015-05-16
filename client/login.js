@@ -8,7 +8,7 @@
           if (error) {
             console.log(error);
           }else{
-            
+            Meteor.call("createProfile");
           }
         }
       );

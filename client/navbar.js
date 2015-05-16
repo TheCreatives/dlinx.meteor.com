@@ -2,7 +2,9 @@
   Meteor.subscribe("user");
   Meteor.subscribe("getAllUsers");
   Meteor.subscribe("getAllMessages");
-  Meteor.subscribe("getAlerts")
+  Meteor.subscribe("getAlerts");
+  Meteor.subscribe("getMyProfile");
+  Meteor.subscribe("getAllProfiles");
   //navbar
   Template.navbar.helpers({
     g_user:function(){
@@ -35,9 +37,6 @@
       Session.set("targetProfileID",_uid);
     }
   });
-
-
-  
 
   //Execute when navbar renders
   Template.navbar.rendered=function(){

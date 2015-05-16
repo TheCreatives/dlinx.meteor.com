@@ -1,5 +1,6 @@
 Messages=new Mongo.Collection("chats");
 Alerts=new Mongo.Collection("alerts");
+Profiles=new Mongo.Collection("profiles");
 if (Meteor.isClient) {
   //Format date and time
   Template.registerHelper('formatDate', function(date) {
@@ -13,7 +14,9 @@ if (Meteor.isClient) {
   Template.registerHelper("isMine",function(owner){
     return owner===Meteor.userId();
   });
-
+  Template.registerHelper("getProfile",function(uid){
+    return Meteor.users.findOne(uid);
+  })
   Meteor.subscribe("user");
 }
 
