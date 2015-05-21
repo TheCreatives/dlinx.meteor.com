@@ -22,7 +22,7 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    if(Accounts.loginServiceConfiguration.findOne().length==0){
+    if(Accounts.loginServiceConfiguration.findOne()==undefined || Accounts.loginServiceConfiguration.findOne().length==0){
       Accounts.loginServiceConfiguration.insert({
         service: "google",
         clientId: "970761738859-n1mjjjst085amnmsg5t46p6hoag1s6pb",
