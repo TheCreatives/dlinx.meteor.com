@@ -37,4 +37,5 @@ Steps to start development version.
 
 7) Remove autopublish module using 
 	$ meteor remove autopublish
+	
 To run use command meteor on command prompt.
