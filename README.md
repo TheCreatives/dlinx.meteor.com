@@ -35,4 +35,6 @@ Steps to start development version.
 	
 	g) accounts-google
 
+7) Remove autopublish module using 
+	$ meteor remove autopublish
 To run use command meteor on command prompt.
