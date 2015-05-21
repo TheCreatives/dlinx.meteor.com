@@ -2,10 +2,15 @@ Messages=new Mongo.Collection("chats");
 Alerts=new Mongo.Collection("alerts");
 Profiles=new Mongo.Collection("profiles");
 if (Meteor.isClient) {
+  var timeTick = new Tracker.Dependency();
+  Meteor.setInterval(function () {
+    timeTick.changed();
+  }, 1000);
   //Format date and time
   Template.registerHelper('formatDate', function(date) {
     var _now=new Date()
       _date=new Date(date);
+    timeTick.depend();
     if((_now.getDate()-_date.getDate())>0||(_now.getMonth()-_date.getMonth())>0||(_now.getYear()-_date.getYear())>0){
       return moment(_date).calendar()
     }
