@@ -25,9 +25,9 @@
   //Messages Events
   Template.messages.events({
     // Send new msg
-    'keypress #chatMsg': function (event) {
+    'keypress #chatMsg': function (e) {
       if($("#chatMsg").val()=="")return;
-      if(window.event.which===13){
+      if(e.keyCode===13){
         var _targetUsr=Session.get("targetProfileID");
         var _msg=$("#chatMsg").val();
         Meteor.call("sendMessage",_targetUsr,_msg);
